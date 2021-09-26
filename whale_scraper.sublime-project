@@ -8,7 +8,16 @@
 	"folders":
 	[
 		{
-			"path": "whale_scraping"
+			"path": "whale_scraping",
+		}
+	],
+	"build_systems":
+	[
+		{
+			"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+			"name": "Anaconda Python Builder",
+			"selector": "source.python",
+			"shell_cmd": "\"python\" -u \"$file\""
 		}
 	],
 }

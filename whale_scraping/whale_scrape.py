@@ -1,8 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.action_chains import ActionChains
 import time
-from bs4 import BeautifulSoup
-import requests
+
 import pickle
 
 driver = webdriver.Chrome("chromedriver")
@@ -13,11 +12,11 @@ actionman = ActionChains(driver)
 time.sleep(10)
 scroll_pause = 1
 screen_height = driver.execute_script("return window.screen.height;")
-i=1
-scroll_max=10
-last_height=driver.execute_script("return document.body.scrollHeight")
+i = 1
+scroll_max = 10
+last_height = driver.execute_script("return document.body.scrollHeight")
 
-while i<scroll_max:
+while i < scroll_max:
 	# Scroll down to bottom
 	driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 
@@ -28,11 +27,11 @@ while i<scroll_max:
 	new_height = driver.execute_script("return document.body.scrollHeight")
 
 	if new_height == last_height:
-	#We reached the end
+		# We reached the end
 		break
 
 	last_height = new_height
-	i+=1
+	i += 1
 
 time.sleep(10)
 
@@ -43,25 +42,20 @@ image_links[0].click()
 time.sleep(1)
 
 
-url_tab= []
-ended=False
-while not ended :
+url_tab = []
+ended = False
+while not ended:
 	time.sleep(1)
 	url_temp = driver.find_elements_by_class_name("MMImage-Origin")
 	print(url_temp[0].get_attribute("src"))
 	url_temp[0].click()
 	if(url_tab):
-		if(url_tab[-1]==url_temp[0].get_attribute("src")):
-			ended=True
+		if(url_tab[-1] == url_temp[0].get_attribute("src")):
+			ended = True
 	url_tab.append(url_temp[0].get_attribute("src"))
 
 
 
-# Open a file and use dump()
-with open('whale-url.pkl', 'wb') as file:
-      
-    # A new file will be created
-    pickle.dump(url_tab, file)
 
 driver.close()
 driver.quit()
