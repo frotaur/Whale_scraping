@@ -1,5 +1,5 @@
 whale_scraper.sublime-workspace
-whale_scraping\*
-!whale_scraping\downloader
-!whale_scraping\whale_scrape.py
-!whale_scraping\chromedriver.exe
+whale_scraping/
+!whale_scraping/downloader
+!whale_scraping/whale_scrape.py
+!whale_scraping/chromedriver.exe
