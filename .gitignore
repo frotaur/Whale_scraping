@@ -2,6 +2,8 @@ whale_scraper.sublime-workspace
 whale_scraping/Whales/
 whale_scraping/bad_urls.pkl
 whale_scraping/whale-url.pkl
+whale_scraping/Whale_videos
+whale_scraping/Whales_old
 whale_scraping/istock-url.pkl
 whale_scraping/getty-url.pkl
 whale_scraping/Whales_istock

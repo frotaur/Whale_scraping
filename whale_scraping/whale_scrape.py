@@ -45,7 +45,7 @@ time.sleep(1)
 url_tab = []
 ended = False
 while not ended:
-	time.sleep(1)
+	time.sleep(2)
 	url_temp = driver.find_elements_by_class_name("MMImage-Origin")
 	print(url_temp[0].get_attribute("src"))
 	url_temp[0].click()
@@ -56,6 +56,8 @@ while not ended:
 
 
 
+with open("whale-url.pkl", "wb") as f:
+	pickle.dump(url_tab, f)
 
 driver.close()
 driver.quit()
