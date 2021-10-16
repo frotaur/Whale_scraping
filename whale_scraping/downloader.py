@@ -6,7 +6,7 @@ url_tab = []
 
 
 # Load whale urls
-with open('whale-url.pkl', 'rb') as file:
+with open('istock-url.pkl', 'rb') as file:
 
 	# A new file will be created
 	url_tab = pickle.load(file)
@@ -33,13 +33,13 @@ for url in url_tab:
 		goodformat=False
 	print(url)
 	if(goodformat):
-		with open("Whales/whale_{i}.{imgform}".format(i=i,imgform=imgformat[6:]),"wb") as image:
+		with open("Whales_istock/whale_{i}.{imgform}".format(i=i,imgform=imgformat[6:]),"wb") as image:
 			image.write(resp.content)
 			image.close()
 	else:
 		bad_urls.append(url)
 	i+=1
 
-with open("bad_urls.pkl","wb") as file:
+with open("bad_urls_istock.pkl","wb") as file:
 	pickle.dump(bad_urls,file)
 	file.close()

@@ -3,3 +3,8 @@ whale_scraping/Whales/
 whale_scraping/bad_urls.pkl
 whale_scraping/whale-url.pkl
 whale_scraping/istock-url.pkl
+whale_scraping/getty-url.pkl
+whale_scraping/Whales_istock
+whale_scraping/Whales_getty
+whale_scraping/bad_urls_istock.pkl
+whale_scraping/bad_urls_getty.pkl
